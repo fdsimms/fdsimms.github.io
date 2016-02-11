@@ -6,12 +6,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
     </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body>
+    <audio id="audio" src="CosmicRush.ogg" autoplay="true" loop="true">
+
+    </audio>
     <main class="main">
       <canvas id="canvas" width="1000" height="600">
       </canvas>
-      <div class="background" />
+      <div class="background">
+      </div>
+      <i id="sound-button" class="fa fa-2x fa-volume-up playing" >
+      </i>
+      <i id="play-button" class="fa fa-2x fa-pause" >
+      </i>
     </main>
 
     <script type="application/javascript" src="vendor/keymaster.js"></script>
@@ -27,17 +36,32 @@
 
     <script type="application/javascript">
        (function () {
-         var shipImage,
+         var shipImageWithBoost,
+             shipImageNoBoost,
              alienImage1,
              alienImage2,
              alienImage3,
              alienImage4,
+             shipImages = [],
              alienImages = [];
-
+          window.addEventListener("blur", function () {
+            document.getElementById("audio").pause();
+          })
+          window.addEventListener("focus", function () {
+            var soundButton = document.getElementById("sound-button");
+            if (!$(soundButton).hasClass("paused")) {
+              document.getElementById("audio").play();
+            }
+          })
 
          function loadResources() {
-           shipImage = new Image();
-           shipImage.src = "gamedevtuts_sprites/Ship/Spritesheet_64x29.png";
+           shipImageWithBoost = new Image();
+           shipImageWithBoost.src = "gamedevtuts_sprites/Ship/Spritesheet_64x29.png";
+           shipImages.push(shipImageWithBoost);
+
+           shipImageNoBoost = new Image();
+           shipImageNoBoost.src = "gamedevtuts_sprites/Ship/Spritesheet_64x29_no_flame.png";
+           shipImages.push(shipImageNoBoost);
 
            alienImage1 = new Image();
            alienImage1.src = "./gamedevtuts_sprites/Enemy/hue_shifted/eSpritesheet_40x30_hue1.png";
@@ -58,13 +82,43 @@
 
          loadResources();
 
+         var soundButton = document.getElementById("sound-button");
+         soundButton.addEventListener("click", function () {
+           var audio = document.getElementById("audio");
+
+           if ($(this).hasClass("playing")) {
+            audio.pause();
+            $(this).removeClass("fa-volume-up playing");
+            $(this).addClass("paused fa fa-2x fa-volume-off");
+          } else {
+            audio.play();
+            $(this).removeClass("fa-volume-off paused");
+            $(this).addClass("playing fa fa-2x fa-volume-up");
+          }
+         })
+
+
          var canvasEl = document.getElementsByTagName("canvas")[0];
          canvasEl.width = SpaceInvaders.Game.DIM_X;
          canvasEl.height = SpaceInvaders.Game.DIM_Y;
          var ctx = canvasEl.getContext("2d");
-         var game = new SpaceInvaders.Game(shipImage, alienImages);
-         var gameView = new SpaceInvaders.GameView(game, ctx)
+         var game = new SpaceInvaders.Game(shipImages, alienImages, 1);
+         var gameView = new SpaceInvaders.GameView(game, ctx, shipImages, alienImages)
          gameView.bindKeyHandlers();
+
+         var playButton = document.getElementById("play-button");
+         playButton.addEventListener("click", function () {
+           if ($(this).hasClass("fa-pause")) {
+             game.pause();
+             $(this).removeClass("fa-pause");
+             $(this).addClass("fa fa-2x fa-play");
+           } else {
+             game.continuePlay();
+             $(this).removeClass("fa-play");
+             $(this).addClass("fa fa-2x fa-pause");
+           }
+         })
+
          gameView.start();
 
        })();

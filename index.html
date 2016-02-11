@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cosmic Rush</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <canvas id="canvas" width="1000" height="600">
+      </canvas>
+      <div class="background" />
+    </main>
+
+    <script type="application/javascript" src="vendor/keymaster.js"></script>
+
+    <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/movingObject.js"></script>
+    <script type="application/javascript" src="lib/alien.js"></script>
+    <script type="application/javascript" src="lib/game.js"></script>
+    <script type="application/javascript" src="lib/gameView.js"></script>
+    <script type="application/javascript" src="lib/ship.js"></script>
+    <script type="application/javascript" src="lib/bullet.js"></script>
+
+
+    <script type="application/javascript">
+       (function () {
+         var shipImage,
+             alienImage1,
+             alienImage2,
+             alienImage3,
+             alienImage4,
+             alienImages = [];
+
+
+         function loadResources() {
+           shipImage = new Image();
+           shipImage.src = "gamedevtuts_sprites/Ship/Spritesheet_64x29.png";
+
+           alienImage1 = new Image();
+           alienImage1.src = "./gamedevtuts_sprites/Enemy/hue_shifted/eSpritesheet_40x30_hue1.png";
+           alienImages.push(alienImage1);
+
+           alienImage2 = new Image();
+           alienImage2.src = "./gamedevtuts_sprites/Enemy/hue_shifted/eSpritesheet_40x30_hue2.png";
+           alienImages.push(alienImage2);
+
+           alienImage3 = new Image();
+           alienImage3.src = "./gamedevtuts_sprites/Enemy/hue_shifted/eSpritesheet_40x30_hue3.png";
+           alienImages.push(alienImage3);
+
+           alienImage4 = new Image();
+           alienImage4.src = "./gamedevtuts_sprites/Enemy/hue_shifted/eSpritesheet_40x30_hue4.png";
+           alienImages.push(alienImage4);
+         }
+
+         loadResources();
+
+         var canvasEl = document.getElementsByTagName("canvas")[0];
+         canvasEl.width = SpaceInvaders.Game.DIM_X;
+         canvasEl.height = SpaceInvaders.Game.DIM_Y;
+         var ctx = canvasEl.getContext("2d");
+         var game = new SpaceInvaders.Game(shipImage, alienImages);
+         var gameView = new SpaceInvaders.GameView(game, ctx)
+         gameView.bindKeyHandlers();
+         gameView.start();
+
+       })();
+     </script>
+  </body>
+</html>

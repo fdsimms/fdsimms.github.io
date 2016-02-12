@@ -27,7 +27,10 @@
         <h2>
           A game by Frankie Simms
           </h2>
-          <a href="http://www.github.com/fdsimms">(github.com/fdsimms)</a>
+          <a href="http://www.github.com/fdsimms"
+            target="_blank">
+            github.com/fdsimms
+          </a>
         <p>Press enter</p>
       </div>
       <ul class="instructions-modal hidden-instructions">
@@ -43,9 +46,12 @@
         <li>
            <i class="fa fa-lg fa-volume-off"></i> for music.
         </li>
+        <li>
+          Press enter when you understand.
+        </li>
       </ul>
       <div class="game-over-modal hidden">
-        <h1>GAME OVER</h1>
+        <h1>Game over</h1>
         <h2>But look how well you did</h2>
         <h2>Press enter to start anew</h2>
       </div>
@@ -130,22 +136,9 @@
          canvasEl.width = SpaceInvaders.Game.DIM_X;
          canvasEl.height = SpaceInvaders.Game.DIM_Y;
          var ctx = canvasEl.getContext("2d");
-         var game = new SpaceInvaders.Game(shipImages, alienImages, 1);
+         var game = window.Game = new SpaceInvaders.Game(shipImages, alienImages, 1);
          var gameView = new SpaceInvaders.GameView(game, ctx, shipImages, alienImages)
          gameView.bindStartHandler();
-
-         var playButton = document.getElementById("play-button");
-         playButton.addEventListener("click", function () {
-           if ($(this).hasClass("fa-pause")) {
-             game.pause();
-             $(this).removeClass("fa-pause");
-             $(this).addClass("fa fa-2x fa-play");
-           } else {
-             game.continuePlay();
-             $(this).removeClass("fa-play");
-             $(this).addClass("fa fa-2x fa-pause");
-           }
-         })
 
          gameView.start();
 

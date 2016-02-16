@@ -529,6 +529,7 @@ letter-spacing: 0px;
 .download-resume {
 	font-size: 20px;
 	color: #000;
+	padding-top: 25px;
 	width: 100%
 }
 
@@ -536,7 +537,6 @@ letter-spacing: 0px;
 	display: block;
 	color: #000;
 	text-align: center;
-	padding-top: 25px;
 }
 
 .download-resume a:hover {

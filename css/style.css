@@ -511,6 +511,10 @@ letter-spacing: 0px;
 	text-decoration:none;
 }
 
+.copyright_text a:hover {
+	color: #FF7588;
+}
+
 .skill-icon {
 	font-size: 93px;
 	padding-bottom: 10px;

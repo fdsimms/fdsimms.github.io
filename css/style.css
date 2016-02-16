@@ -478,7 +478,7 @@ width: 30px;
 height: 30px;
 text-align: center;
 line-height: 28px;
-transition: all 1s;
+transition: all .7s;
 }
 ul.icon_list li a:hover{
 	color: #f73b56;

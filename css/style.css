@@ -42,7 +42,8 @@ header{
 	display: block;
 	border: 2px solid black;
 	border-radius: 10px;
-  width: 600px;
+  width: 100%;
+	min-width: 400px;
 	background-color: rgba(255,255,255,0.95)
 }
 .home_text h2{
@@ -124,6 +125,15 @@ background-color: #2d3334;
 	margin-bottom: 10px;
 	line-height: 21px;
 }
+
+.about_us {
+	float:right;
+}
+
+.about_us:first-child {
+	float: left;
+}
+
 .about_title h2{
 	font-size: 25px;
 	color: #3d3d3d;
@@ -463,6 +473,9 @@ ul.icon_list li a:hover{
 	color: #f73b56;
 	border-color:#f73b56;
 }
+
+
+
 .copyright_text{
 padding-top: 60px;
 }

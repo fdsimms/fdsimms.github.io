@@ -276,6 +276,7 @@ margin-top: -40px;
 	opacity: 1;
 }
 
+
 .image_overlay{
 position: absolute;
 width: 100%;
@@ -296,6 +297,11 @@ color: #fff;
 text-decoration: none;
 text-transform: uppercase;
 }
+
+.image_overlay a:hover {
+	color: #ccc;
+}
+
 .image_overlay a:first-child{
 	padding-left: 20px;
 	left: 0;

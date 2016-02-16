@@ -525,3 +525,25 @@ letter-spacing: 0px;
 .contact-info .single_contact_info:first-child {
 	float: left;
 }
+
+.download-resume {
+	font-size: 20px;
+	color: #000;
+	width: 100%
+}
+
+.download-resume a {
+	display: block;
+	color: #000;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.download-resume a:hover {
+	color: #ccc;
+}
+
+.fa-download {
+	color: #f73b56;
+	padding-right: 10px;
+}

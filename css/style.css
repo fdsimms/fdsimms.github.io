@@ -8,6 +8,17 @@ a{
 	font-family: 'Dosis', sans-serif;
 	text-decoration: none;
 }
+
+a:hover,
+a:visited,
+a:focus {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #31708F;
+}
+
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Dosis', sans-serif;
 }

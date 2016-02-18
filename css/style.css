@@ -556,3 +556,30 @@ letter-spacing: 0px;
 	color: #f73b56;
 	padding-right: 10px;
 }
+
+@media (min-width: 768px) {
+.about-row {
+    width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+.about-row {
+    width: 70%;
+	}
+}
+
+@media (max-width: 767px) {
+	.about_us:first-child {
+    float: none;
+		width: 100%;
+	}
+	.about_us {
+    float: none;
+		width: 100%;
+	}
+
+	.row {
+		width: 100%;
+	}
+}

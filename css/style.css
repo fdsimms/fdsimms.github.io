@@ -291,20 +291,24 @@ opacity: 0;
 
 }
 .image_overlay a{
-position: absolute;
-top: 20px;
-right: 20px;
-color: #fff;
-text-decoration: none;
-text-transform: uppercase;
+	color: #fff;
+	float: right;
+	padding: 5px;
+	margin: 10px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .image_overlay a:hover {
-	color: #ccc;
+	background: rgba(239,133,133,.9);
 }
 
 .image_overlay a:first-child{
-	padding-left: 20px;
+	/*padding-left: 20px;*/
+	/*position: absolute;*/
+	float: left;
 	left: 0;
 }
 .image_overlay h2{

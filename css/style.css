@@ -515,6 +515,10 @@ letter-spacing: 0px;
 	color: #FF7588;
 }
 
+.skills-row {
+	margin-bottom: 50px;
+}
+
 .skill-icon {
 	font-size: 93px;
 	padding-bottom: 10px;
@@ -558,6 +562,9 @@ letter-spacing: 0px;
 }
 
 @media (min-width: 768px) {
+	.navbar-header {
+		background: transparent;
+	}
  .about-row,
  .row {
     width: 100%;
@@ -577,6 +584,7 @@ letter-spacing: 0px;
 		display: inline;
 		text-align: center;
 	}
+
 }
 
 @media (min-width: 992px) {
@@ -590,6 +598,11 @@ letter-spacing: 0px;
 	.skill-icon,
 	.skill {
 		display: block;
+		float: left;
+		padding: 0 5px;
+	}
+	.skills-row {
+			width: 46%;
 	}
 }
 

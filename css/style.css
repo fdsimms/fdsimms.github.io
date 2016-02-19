@@ -598,7 +598,8 @@ letter-spacing: 0px;
 	    width: 70%;
 		}
 	.project-col {
-	 width: 50%;
+	 width: 65%;
+	 float: none;
 	 }
 	.skill-icon,
 	.skill {

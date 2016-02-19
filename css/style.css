@@ -55,7 +55,7 @@ header{
 	border: 2px solid black;
 	border-radius: 10px;
   width: 100%;
-	min-width: 400px;
+	min-width: 250px;
 	background-color: rgba(255,255,255,0.95)
 }
 .home_text h2{
@@ -558,26 +558,65 @@ letter-spacing: 0px;
 }
 
 @media (min-width: 768px) {
-.about-row {
+ .about-row,
+ .row {
     width: 100%;
+	}
+	.pad_top {
+		padding-top: 0;
+	}
+ .project-col{
+		margin: auto;
+		padding-bottom: 10px;
+	}
+	.project-col{
+		width: 60%;
+	}
+	.skill-icon,
+	.skill {
+		display: inline;
+		text-align: center;
 	}
 }
 
 @media (min-width: 992px) {
-.about-row {
-    width: 70%;
+	.about-row,
+	.row {
+	    width: 70%;
+		}
+	.project-col {
+	 width: 50%;
+	 }
+	.skill-icon,
+	.skill {
+		display: block;
 	}
 }
 
 @media (max-width: 767px) {
+	.skill-icon,
+	.skill {
+		display: inline;
+		text-align: center;
+	}
 	.about_us:first-child {
     float: none;
 		width: 100%;
 	}
+
 	.about_us {
     float: none;
 		width: 100%;
 	}
+	.project-col {
+		 margin: auto;
+		 padding-bottom: 10px;
+		 width: 90%
+	 }
+
+	 .pad_top {
+		 padding-top: 0;
+	 }
 
 	.row {
 		width: 100%;

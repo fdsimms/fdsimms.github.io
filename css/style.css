@@ -641,3 +641,7 @@ letter-spacing: 0px;
 		width: 100%;
 	}
 }
+
+.single_contact_info:last-child {
+	margin-top: 40px;
+}

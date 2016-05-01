@@ -572,7 +572,7 @@ letter-spacing: 0px;
 	}
  .about-row,
  .row {
-    width: 100%;
+    width: 91%;
 	}
 	.pad_top {
 		padding-top: 0;
@@ -608,7 +608,7 @@ letter-spacing: 0px;
 		padding: 0 5px;
 	}
 	.skills-row {
-			width: 46%;
+			width: 55%;
 	}
 }
 
@@ -638,7 +638,7 @@ letter-spacing: 0px;
 	 }
 
 	.row {
-		width: 100%;
+		width: 87%;
 	}
 }
 

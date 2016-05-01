@@ -642,6 +642,10 @@ letter-spacing: 0px;
 	}
 }
 
+.single_image {
+	border: 1px solid #eee;
+}
+
 .single_contact_info:last-child {
 	margin-top: 40px;
 }
